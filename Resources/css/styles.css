@@ -14,23 +14,25 @@ body{
     justify-content: space-around;
     align-items: stretch;
     align-content: stretch;
-    background-color: blueviolet;
+    background-color: #e0e0e0;
+    box-shadow: 5px 5px 10px 1px #000000;
+    border-radius: 30px;
 }
 
 .cv{
     display: grid; 
     grid-template-columns: repeat(2, 1fr); 
     grid-template-rows: repeat(3, 1fr); 
-    gap: 5px 5px; 
+    gap: 10px 15px; 
     grid-template-areas: 
-        ". ."
-        ". ."
-        ". ."; 
+    ". ."
+    ". ."
+    "Idiomas Idiomas"
+    ". .";
     justify-content: center; 
     align-content: center; 
     justify-items: center; 
     align-items: center;
-    background-color: chartreuse;
 }
 
 .row{
@@ -59,15 +61,26 @@ body{
     align-items: stretch;
     align-content: stretch;
     width: 100%;
-    background-color: blue;
+    height: 100%;
 }
 
-.sub_section{
+.zoom:hover{
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: stretch;
     align-content: stretch;
-    background-color: brown;
+    width: 110%;
+    height: 110%;
+    transition:  210ms;
+}
+
+.format_card{
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    background-color: rgb(7, 135, 194);
+    box-shadow: 2px 2px 5px 1px #000000;
+    border-radius: 10px;
 }
