@@ -3,6 +3,7 @@
 		<title>Eder Meneses Galvan</title>
 		<script src="Resources/js/archivo.js"></script>
 		<link rel="stylesheet" href="Resources/css/styles.css">	
+		<link rel="script" href="Resources/js/archivo.js">
 	</head>
 	
 	<body>
@@ -18,7 +19,7 @@
 		
 						<div class="section format_card zoom">
 							<h3 class="section_header">Contacto</h3>
-		
+							<input type="button" value="CONTACTO" onclick="showContact()">
 						</div>
 						<div class="section format_card zoom">
 							<h3 class="section_header">Perfil Profesional</h3>
@@ -52,6 +53,9 @@
 						</div>
 					</div>
 		
+			</div>
+			<div class="contact">
+				<button onclick="hideContact()" style="align-self: flex-end;">Cerrar</button>
 			</div>
 		</div>
 	</body>
