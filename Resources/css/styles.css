@@ -1,10 +1,12 @@
-body{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: flex-start;
-    align-content: normal;
+.sup{
+    height: 100%;
+    display: grid;
+    grid:
+        "header header header" auto
+        "leftSide body rightSide" 1fr
+        "footer footer footer" auto
+        / auto 1fr auto;
+    gap: 8px;
 }
 
 .paper_sheet{
@@ -17,18 +19,18 @@ body{
     background-color: #e0e0e0;
     box-shadow: 5px 5px 10px 1px #000000;
     border-radius: 30px;
+    grid-area: body; 
 }
 
 .cv{
     display: grid; 
     grid-template-columns: repeat(2, 1fr); 
     grid-template-rows: repeat(3, 1fr); 
-    gap: 10px 15px; 
+    gap: 20px 30px; 
     grid-template-areas: 
-    ". ."
-    ". ."
-    "Idiomas Idiomas"
-    ". .";
+        ". ."
+        ". ."
+        ". ."; 
     justify-content: center; 
     align-content: center; 
     justify-items: center; 
@@ -64,6 +66,17 @@ body{
     height: 100%;
 }
 
+.sub_section{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+    width: 100%;
+    height: 100%;
+}
+
 .zoom:hover{
     display: flex;
     flex-direction: column;
@@ -80,7 +93,57 @@ body{
     text-align: center;
     color: #fff;
     text-decoration: none;
-    background-color: rgb(7, 135, 194);
+    background-color: #0787c2;
     box-shadow: 2px 2px 5px 1px #000000;
     border-radius: 10px;
 }
+
+.major{
+    width: 100%;
+    font-family: "Space Mono", monospace;
+    text-align: center;
+    font-size: 35px;
+    color: #007ef5;
+    background-color: #fff;
+    text-shadow: #000000 2px 2px 2px;
+}
+
+.name{
+    width: 100%;
+    height: max-content;
+    font-family: "Tahoma";
+    text-transform: capitalize;
+    text-align: center;
+    text-justify: center;
+    font-size: 35px;
+    color: #fff;
+}
+
+.img_u{
+    width: 150px;
+    height: 150px;
+    background: #fff center center/contain no-repeat;
+    background-image: url(../img/placeholder.jpg);
+    margin: 5px;
+    border-width: 10px;
+    border-radius: 150px;
+    border-color: #fff;
+}
+
+.header{
+    background-color: #007ef5;
+    grid-area: header; 
+}
+
+.section_header{
+    font-family: "Tahoma";
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 15px;
+    color: #ffffff;
+    text-shadow: #809cd3 2px 2px 5px;
+}
+
+/*.leftSide { grid-area: leftSide; }
+.rightSide { grid-area: rightSide; }
+.footer { grid-area: footer; }*/
