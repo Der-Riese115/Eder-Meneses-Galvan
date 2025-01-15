@@ -2,8 +2,7 @@
 	<head>
 		<title>Eder Meneses Galvan</title>
 		<script src="Resources/js/archivo.js"></script>
-		<link rel="stylesheet" href="Resources/css/styles.css">	
-		<link rel="script" href="Resources/js/archivo.js">
+		<link rel="stylesheet" href="Resources/css/styles.css">
 	</head>
 	
 	<body>
@@ -54,8 +53,24 @@
 					</div>
 		
 			</div>
-			<div class="contact">
-				<button onclick="hideContact()" style="align-self: flex-end;">Cerrar</button>
+			<div class="contact" id="contactDiv">
+				<div class="column_data">
+					<input type="button" value="E-MAIL">
+					<h4 class="data">eder_isc_mg101203@outlook.com</h4>
+				</div>
+				<div class="column_data">
+					<input type="button" value="TELEFONO">
+					<h4 class="data number_phone"><a href="tel:+52-55-44-46-83-17">5544468317</a></h4>
+				</div>
+				<div class="column_data">
+					<input type="button" value="DIRECCIÓN">
+					<h4 class="data">Estado de México, Teoloyucan, Barrio Acolco, Calle Matamoros Av. Fresno s/n</h4>
+				</div>
+				<div class="column_data">
+					<input type="button" value="CÓDIGO POSTAL">
+					<h4 class="data">54786</h4>
+				</div>
+				<button class="contact_button" id="contactBut" onclick="hideContact()" style="align-self: flex-center;">Cerrar</button>
 			</div>
 		</div>
 	</body>

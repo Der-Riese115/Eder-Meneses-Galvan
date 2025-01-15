@@ -55,6 +55,15 @@
     align-content: stretch;
 }
 
+.column_data{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
 .section{
     display: flex;
     flex-direction: column;
@@ -181,6 +190,20 @@
     bottom: 0;
 }
 
+.contact_button {
+    position: fixed;
+    bottom: -100%; 
+    transition: bottom 0.5s ease;
+}
+
+.contact_button.show {
+    bottom: 0;
+}
+
+a[href^="tel"] {
+    color: inherit;
+    text-decoration: none;
+  }
 /*.leftSide { grid-area: leftSide; }
 .rightSide { grid-area: rightSide; }
 .footer { grid-area: footer; }*/
