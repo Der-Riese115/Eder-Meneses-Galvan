@@ -55,20 +55,20 @@
 			</div>
 			<div class="contact" id="contactDiv">
 				<div class="column_data">
-					<input type="button" value="E-MAIL">
-					<h4 class="data">eder_isc_mg101203@outlook.com</h4>
+					<input id="btn_eml" onclick="copiarTexto('btn_eml')" type="button" value="E-MAIL">
+					<input type="text" readonly id="d_eml" class="data" value="eder_isc_mg101203@outlook.com">
 				</div>
 				<div class="column_data">
-					<input type="button" value="TELEFONO">
-					<h4 class="data number_phone"><a href="tel:+52-55-44-46-83-17">5544468317</a></h4>
+					<input id="btn_tel" onclick="copiarTexto('btn_tel')" type="button" value="TELEFONO">
+					<a href="tel:+52-55-44-46-83-17"><input type="text" readonly id="d_tel" class="data number_phone" value="5544468317"></a>
 				</div>
 				<div class="column_data">
-					<input type="button" value="DIRECCIÓN">
-					<h4 class="data">Estado de México, Teoloyucan, Barrio Acolco, Calle Matamoros Av. Fresno s/n</h4>
+					<input id="btn_dir" onclick="copiarTexto('btn_dir')" type="button" value="DIRECCIÓN">
+					<input type="text" readonly id="d_dir" class="data" value="Estado de México, Teoloyucan, Barrio Acolco, Calle Matamoros Av. Fresno s/n">
 				</div>
 				<div class="column_data">
-					<input type="button" value="CÓDIGO POSTAL">
-					<h4 class="data">54786</h4>
+					<input id="btn_cop" onclick="copiarTexto('btn_cop')" type="button" value="CÓDIGO POSTAL">
+					<input type="text" readonly id="d_cop" class="data" value="54786">
 				</div>
 				<button class="contact_button" id="contactBut" onclick="hideContact()" style="align-self: flex-center;">Cerrar</button>
 			</div>
