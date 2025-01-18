@@ -138,7 +138,7 @@
     width: 150px;
     height: 150px;
     background: #fff center center/contain no-repeat;
-    background-image: url(../img/placeholder.jpg);
+    background-image: url(../img/me.png);
     margin: 5px;
     border: 10px solid #fff;
     border-radius: 100%;
@@ -167,10 +167,18 @@
     font-family: "Tahoma";
     text-transform: capitalize;
     text-align: center;
-    font-size: 15px;
+    font-size: 30px;
     color: #ffffff;
     text-shadow: #809cd3 2px 2px 5px;
     border-bottom: 3px solid #fff;
+}
+
+.section_data{
+    font-family: "Tahoma";
+    text-align: justify;
+    margin: 10px;
+    font-size: 15px;
+    color: #ffffff;
 }
 
 .contact_caller{
@@ -222,6 +230,25 @@ a[href^="tel"] {
     background: #809cd3;
     color: #fff;
     border: 0px #ffffff00;
+}
+
+.data_button {
+	box-shadow:inset 0px 0px 15px 3px #23395e;
+	background:linear-gradient(to bottom, #2e466e 5%, #415989 100%);
+	background-color:#2e466e;
+	border-radius:17px;
+	border:1px solid #1f2f47;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:6px 13px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #263666;
+}
+.data_button:hover {
+	background:linear-gradient(to bottom, #415989 5%, #2e466e 100%);
+	background-color:#415989;
 }
 /*.leftSide { grid-area: leftSide; }
 .rightSide { grid-area: rightSide; }
