@@ -237,7 +237,11 @@ body {
     }
 
     .contact-buttons {
-        flex-direction: column;
-        gap: 10px;
+        display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: space-around;
+          align-items: center;
+          align-content: normal;
     }
 }
