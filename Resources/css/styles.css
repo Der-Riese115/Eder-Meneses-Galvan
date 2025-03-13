@@ -138,13 +138,6 @@ body {
     text-align: center;
 }
 
-.contact-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 20px;
-}
-
 .icon-button {
     background-color: #2e466e;
     color: #fff;
