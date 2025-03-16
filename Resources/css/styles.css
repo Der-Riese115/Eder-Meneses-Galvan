@@ -540,6 +540,31 @@ body {
         font-size: 0.9rem;
     }
 
+    .close-button {
+        position: static; /* Elimina la posición absoluta */
+        margin-top: 10px; /* Espacio entre los botones y el botón de cerrar */
+        background: linear-gradient(135deg, #f50000, #ff0000);
+        color: #fff;
+        border: none;
+        padding: 12px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.2rem;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .close-button:hover {
+        background: linear-gradient(135deg, #ff0000, #f50000);
+        transform: scale(1.2);
+        box-shadow: 0 6px 15px rgba(255, 0, 0, 0.8);
+    }
+
     .contact-content {
         padding: 20px;
         display: flex;
