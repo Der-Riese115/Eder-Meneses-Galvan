@@ -426,6 +426,49 @@ body {
     color: #fff;
 }
 
+/* Estilos para las barras de progreso */
+.progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    height: 20px;
+    margin: 10px 0;
+}
+
+.progress {
+    height: 100%;
+    background-color: #007ef5;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.progress-text {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* Alineación de los elementos de la lista */
+.section_data li {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.section_data li span {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .navbar ul {

@@ -145,10 +145,84 @@ document.addEventListener('DOMContentLoaded', function () {
         conocimientosLista.innerHTML = traducciones[idiomaActual].conocimientos_lista.map(item => `<li>${item}</li>`).join('');
     
         document.querySelector('#lenguajes h3').textContent = traducciones[idiomaActual].lenguajes;
-        document.querySelector('#lenguajes p').textContent = traducciones[idiomaActual].lenguajes_texto;
+        const lenguajesLista = document.querySelector('#lenguajes ul');
+        lenguajesLista.innerHTML = `
+            <li>
+                <span>Java</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 78%;"></div>
+                    <span class="progress-text">78%</span>
+                </div>
+            </li>
+            <li>
+                <span>Kotlin</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 65%;"></div>
+                    <span class="progress-text">65%</span>
+                </div>
+            </li>
+            <li>
+                <span>Xamarin</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 65%;"></div>
+                    <span class="progress-text">65%</span>
+                </div>
+            </li>
+            <li>
+                <span>C#, C++, C</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 70%;"></div>
+                    <span class="progress-text">70%</span>
+                </div>
+            </li>
+            <li>
+                <span>Bootstrap</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 45%;"></div>
+                    <span class="progress-text">45%</span>
+                </div>
+            </li>
+            <li>
+                <span>Springboot</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 65%;"></div>
+                    <span class="progress-text">65%</span>
+                </div>
+            </li>
+            <li>
+                <span>Node.JS</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 65%;"></div>
+                    <span class="progress-text">65%</span>
+                </div>
+            </li>
+            <li>
+                <span>Python</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 75%;"></div>
+                    <span class="progress-text">75%</span>
+                </div>
+            </li>
+            <li>
+                <span>Git</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 40%;"></div>
+                    <span class="progress-text">40%</span>
+                </div>
+            </li>
+        `;
     
         document.querySelector('#idiomas h3').textContent = traducciones[idiomaActual].idiomas;
-        document.querySelector('#idiomas p').textContent = traducciones[idiomaActual].idiomas_texto;
+        const idiomasLista = document.querySelector('#idiomas ul');
+        idiomasLista.innerHTML = `
+            <li>
+                <span>${traducciones[idiomaActual].idiomas_texto}</span>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 66%;"></div>
+                    <span class="progress-text">66%</span>
+                </div>
+            </li>
+        `;
     
         document.querySelector('#aptitudes h3').textContent = traducciones[idiomaActual].aptitudes;
         const aptitudesLista = document.querySelector('#aptitudes ul');
