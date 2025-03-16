@@ -8,9 +8,9 @@ body {
 }
 
 .header {
-    background-color: #007ef5;
+    background: linear-gradient(135deg, #007ef5, #005bb5);
+    padding: 30px;
     color: #fff;
-    padding: 20px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -34,8 +34,44 @@ body {
 }
 
 .name {
-    font-size: 2.5rem;
     margin: 10px 0;
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.side-menu {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: #005bb5;
+    border-radius: 10px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s;
+}
+
+.side-menu.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.side-menu a {
+    padding: 15px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    text-align: center;
+    transition: background 0.3s;
+}
+
+.side-menu a:hover {
+    background-color: #ffdd57;
 }
 
 .major {
