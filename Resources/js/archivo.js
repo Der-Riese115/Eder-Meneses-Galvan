@@ -1,3 +1,129 @@
+document.addEventListener('DOMContentLoaded', function () {
+    const traducciones = {
+        "es": {
+            "titulo": "Ingeniero en Sistemas Computacionales",
+            "botones": {
+                "perfil": "Perfil",
+                "aptitudes": "Aptitudes",
+                "experiencia": "Experiencia",
+                "contacto": "Contacto",
+                "traducir": "Traducir"
+            },
+            "perfil": "Datos Personales",
+            "aptitudes": "Aptitudes",
+            "experiencia": "Experiencia Profesional",
+            "idiomas": "Idiomas",
+            "lenguajes": "Lenguajes y frameworks de Programación",
+            "perfil_texto": "Actualmente curso el 11vo cuatrimestre de la carrera de Ingeniería en Sistemas Computacionales en la (UBAM), poseo conocimientos técnicos de programación y estoy familiarizado con temas como sistemas computacionales. Mi aspiración profesional es desarrollarme en una empresa en áreas como desarrollador de software. Me considero una persona con disposición para aprender e intentar nuevas técnicas y tecnologías.",
+            "aptitudes_lista": [
+                "Capacidad de análisis",
+                "Resolución de problemas",
+                "Análisis lógico-matemático flexible",
+                "Pensamiento creativo",
+                "Conocimientos adaptativos",
+                "Proactivo",
+                "Comunicación asertiva",
+                "Escucha activa"
+            ],
+            "experiencia_texto": "Soporte de sistemas en Grupo Val - Ro<br>Soporte de sistemas en Parque de las Américas",
+            "idiomas_texto": "Dominio del Inglés (nivel B1)",
+            "lenguajes_texto": "Java, JavaScript, HTML, PHP, Python, Kotlin, Xamarin, C#, C++, C, Prolog, Bootstrap, Springboot, Node.JS, AJAX, Git"
+        },
+        "en": {
+            "titulo": "Computer Systems Engineer",
+            "botones": {
+                "perfil": "Profile",
+                "aptitudes": "Skills",
+                "experiencia": "Experience",
+                "contacto": "Contact",
+                "traducir": "Translate"
+            },
+            "perfil": "Personal Data",
+            "aptitudes": "Skills",
+            "experiencia": "Professional Experience",
+            "idiomas": "Languages",
+            "lenguajes": "Programming Languages and Frameworks",
+            "perfil_texto": "I am currently in the 11th semester of the Computer Systems Engineering degree at (UBAM), I have technical programming knowledge and I am familiar with topics such as computer systems. My professional aspiration is to develop in a company in areas such as software developer. I consider myself a person with a willingness to learn and try new techniques and technologies.",
+            "aptitudes_lista": [
+                "Analytical skills",
+                "Problem solving",
+                "Flexible logical-mathematical analysis",
+                "Creative thinking",
+                "Adaptive knowledge",
+                "Proactive",
+                "Assertive communication",
+                "Active listening"
+            ],
+            "experiencia_texto": "Systems support at Grupo Val - Ro<br>Systems support at Parque de las Américas",
+            "idiomas_texto": "English proficiency (B1 level)",
+            "lenguajes_texto": "Java, JavaScript, HTML, PHP, Python, Kotlin, Xamarin, C#, C++, C, Prolog, Bootstrap, Springboot, Node.JS, AJAX, Git"
+        }
+    };
+
+    // Cargar el archivo JSON con las traducciones
+    fetch('Resources/js/traducciones.json')
+        .then(response => response.json())
+        .then(data => {
+            traducciones.es = data.es;
+            traducciones.en = data.en;
+        })
+        .catch(error => console.error('Error al cargar las traducciones:', error));
+
+    let idiomaActual = 'es';
+
+    // Función para cambiar el idioma
+    function cambiarIdioma(idioma) {
+        idiomaActual = idioma;
+        actualizarTextos();
+    }
+
+    // Función para actualizar los textos en la página
+    function actualizarTextos() {
+        // Actualizar el título del encabezado
+        document.querySelector('.major').textContent = traducciones[idiomaActual].titulo;
+
+        // Actualizar los textos de los botones en la barra de navegación
+        const botonesNav = document.querySelectorAll('.navbar .icon-button');
+        botonesNav.forEach(boton => {
+            const titulo = boton.getAttribute('title').toLowerCase();
+            if (titulo in traducciones[idiomaActual].botones) {
+                boton.querySelector('span').textContent = traducciones[idiomaActual].botones[titulo];
+            }
+        });
+
+        // Actualizar las secciones
+        document.querySelector('#perfil h3').textContent = traducciones[idiomaActual].perfil;
+        document.querySelector('#perfil p').textContent = traducciones[idiomaActual].perfil_texto;
+
+        document.querySelector('#aptitudes h3').textContent = traducciones[idiomaActual].aptitudes;
+        const aptitudesLista = document.querySelector('#aptitudes ul');
+        aptitudesLista.innerHTML = traducciones[idiomaActual].aptitudes_lista.map(item => `<li>${item}</li>`).join('');
+
+        document.querySelector('#experiencia h3').textContent = traducciones[idiomaActual].experiencia;
+        document.querySelector('#experiencia p').innerHTML = traducciones[idiomaActual].experiencia_texto;
+
+        document.querySelectorAll('.section')[3].querySelector('h3').textContent = traducciones[idiomaActual].idiomas;
+        document.querySelectorAll('.section')[3].querySelector('p').textContent = traducciones[idiomaActual].idiomas_texto;
+
+        document.querySelectorAll('.section')[4].querySelector('h3').textContent = traducciones[idiomaActual].lenguajes;
+        document.querySelectorAll('.section')[4].querySelector('p').textContent = traducciones[idiomaActual].lenguajes_texto;
+    }
+
+    // Asignar la función de cambio de idioma al botón de traducción en la barra de navegación
+    document.querySelector('.navbar .icon-button[title="Traducir"]').addEventListener('click', function (event) {
+        event.preventDefault(); // Evitar recarga de la página
+        const nuevoIdioma = idiomaActual === 'es' ? 'en' : 'es';
+        cambiarIdioma(nuevoIdioma);
+    });
+
+    // Asignar la función de cambio de idioma al botón de traducción en la barra lateral
+    document.querySelector('.side-menu a[title="Traducir"]').addEventListener('click', function (event) {
+        event.preventDefault(); // Evitar recarga de la página
+        const nuevoIdioma = idiomaActual === 'es' ? 'en' : 'es';
+        cambiarIdioma(nuevoIdioma);
+    });
+});
+
 document.addEventListener("DOMContentLoaded", function () {
     alert("Bienvenido a la página de Eder Meneses Galvan");
 });
