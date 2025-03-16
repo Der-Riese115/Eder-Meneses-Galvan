@@ -2,6 +2,27 @@ document.addEventListener("DOMContentLoaded", function () {
     alert("Bienvenido a la página de Eder Meneses Galvan");
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const starsContainer = document.getElementById('stars-container');
+
+    // Generar estrellas aleatorias
+    function createStars() {
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.left = Math.random() * 100 + 'vw';
+            star.style.top = Math.random() * 100 + 'vh';
+            star.style.animationDuration = (Math.random() * 5 + 5) + 's';
+            star.style.opacity = Math.random();
+
+            starsContainer.appendChild(star);
+        }
+    }
+
+    createStars();
+});
+
+
 document.addEventListener('scroll', function () {
     const sideMenu = document.getElementById('sideMenu');
     const header = document.querySelector('.header');
