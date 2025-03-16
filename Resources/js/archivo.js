@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     // Cargar el archivo JSON con las traducciones
-    fetch('Resources/js/traducciones.json')
+    fetch('traducciones.json')
         .then(response => response.json())
         .then(data => {
             traducciones.es = data.es;
@@ -108,6 +108,15 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.section')[4].querySelector('h3').textContent = traducciones[idiomaActual].lenguajes;
         document.querySelectorAll('.section')[4].querySelector('p').textContent = traducciones[idiomaActual].lenguajes_texto;
     }
+
+    // Función para desplazarse al inicio de la página
+    document.getElementById('btnInicio').addEventListener('click', function (event) {
+        event.preventDefault(); // Evitar comportamiento predeterminado del enlace
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Desplazamiento suave
+        });
+    });
 
     // Asignar la función de cambio de idioma al botón de traducción en la barra de navegación
     document.querySelector('.navbar .icon-button[title="Traducir"]').addEventListener('click', function (event) {
