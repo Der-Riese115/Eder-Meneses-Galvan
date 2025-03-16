@@ -234,6 +234,31 @@ document.addEventListener('scroll', function () {
     } else {
         sideMenu.classList.remove('show');
     }
+    // Función para desplazamiento suave
+function smoothScroll(target) {
+    const element = document.querySelector(target);
+    if (element) {
+        element.scrollIntoView({
+            behavior: 'smooth', // Desplazamiento suave
+            block: 'start'      // Alinea la sección en la parte superior de la ventana
+        });
+    }
+}
+
+// Asignar el desplazamiento suave a todos los enlaces internos
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (event) {
+        event.preventDefault(); // Evitar el comportamiento predeterminado
+        const target = this.getAttribute('href'); // Obtener el destino (ej: #perfil)
+        smoothScroll(target); // Aplicar desplazamiento suave
+    });
+});
+
+// Función para el botón de inicio
+document.getElementById('btnInicio').addEventListener('click', function (event) {
+    event.preventDefault(); // Evitar comportamiento predeterminado
+    smoothScroll('body'); // Desplazarse al inicio de la página
+});
 });
 
 document.addEventListener("DOMContentLoaded", function () {
