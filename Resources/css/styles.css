@@ -316,24 +316,6 @@ body {
     }
 }
 
-
-.icon-button {
-    background-color: #2e466e;
-    color: #fff;
-    border: none;
-    padding: 15px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    font-size: 1rem;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
 .tooltip {
     visibility: hidden;
     background-color: #00a6ff;
@@ -354,6 +336,23 @@ body {
 .cosmic-button:hover .tooltip {
     visibility: visible;
     opacity: 1;
+}
+
+.icon-button {
+    background-color: #2e466e;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 20%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1rem;
+    width: 100px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 .icon-button:hover {
@@ -382,6 +381,7 @@ body {
     visibility: visible;
     opacity: 1;
 }
+
 
 .footer {
     margin-top: 20px;
