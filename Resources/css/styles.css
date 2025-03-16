@@ -112,12 +112,14 @@ body {
     padding: 0;
     margin: 0;
     display: flex;
+    flex-wrap: wrap; /* Permite que los botones se ajusten en varias filas */
     justify-content: center;
     align-items: center;
+    gap: 10px; /* Espacio entre botones */
 }
 
 .navbar ul li {
-    margin: 0 15px;
+    margin: 0; /* Eliminamos el margen fijo */
 }
 
 .navbar ul li a {
@@ -127,15 +129,50 @@ body {
     transition: color 0.3s ease;
     display: flex;
     align-items: center;
+    padding: 10px 15px; /* Añadimos padding para mejor espaciado */
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo para mejor visibilidad */
+    border-radius: 5px; /* Bordes redondeados */
 }
 
 .navbar ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo al hacer hover */
     color: #ffdd57;
 }
 
 .navbar ul li a i {
     font-size: 1.5rem;
     margin-right: 5px;
+}
+
+/* Estilos para el menú lateral en móvil */
+@media (max-width: 768px) {
+    .side-menu {
+        top: 20px; /* Posición más alta */
+        left: 10px; /* Posición más cercana al borde */
+        transform: none; /* Eliminamos la transformación */
+        background-color: rgba(0, 91, 181, 0.9); /* Fondo semitransparente */
+        border-radius: 10px;
+        padding: 5px;
+        z-index: 1000; /* Asegura que esté por encima del contenido */
+    }
+
+    .side-menu a {
+        padding: 10px;
+        font-size: 1.2rem;
+    }
+
+    /* Margen dinámico para el contenido principal */
+    .main-content {
+        transition: margin-left 0.3s ease;
+    }
+
+    .side-menu.show + .main-content {
+        margin-left: 60px; /* Margen para evitar superposición */
+    }
+
+    .main-content.menu-visible {
+        margin-left: 60px; /* Margen para evitar superposición */
+    }
 }
 
 .main-content {
@@ -414,33 +451,5 @@ body {
         justify-content: space-around;
         align-items: center;
         align-content: normal;
-    }
-
-    .contact-buttons {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .cosmic-button {
-        width: 50px;
-        height: 50px;
-        font-size: 0.9rem;
-    }
-
-    .close-button {
-        top: 5px;
-        right: 5px;
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-    }
-
-    .contact-content {
-        padding: 20px;
-    }
-
-    .footer {
-        margin-top: 10px;
-        font-size: 0.8rem;
     }
 }
