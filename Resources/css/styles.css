@@ -61,6 +61,7 @@ body {
     letter-spacing: 2px;
 }
 
+/* Estilos base del menú lateral */
 .side-menu {
     position: fixed;
     top: 50%;
@@ -75,6 +76,7 @@ body {
     visibility: hidden;
     opacity: 0;
     transition: visibility 0.3s, opacity 0.3s;
+    z-index: 1000; /* Asegura que esté por encima del contenido */
 }
 
 .side-menu.show {
@@ -144,7 +146,7 @@ body {
     margin-right: 5px;
 }
 
-/* Estilos para el menú lateral en móvil */
+/* Estilos para dispositivos móviles */
 @media (max-width: 768px) {
     .side-menu {
         top: 20px; /* Posición más alta */
@@ -153,11 +155,12 @@ body {
         background-color: rgba(0, 91, 181, 0.9); /* Fondo semitransparente */
         border-radius: 10px;
         padding: 5px;
-        z-index: 1000; /* Asegura que esté por encima del contenido */
+        max-height: 90vh; /* Limita la altura del menú */
+        overflow-y: auto; /* Habilita el desplazamiento si es necesario */
     }
 
     .side-menu a {
-        padding: 5px;
+        padding: 10px;
         font-size: 1rem;
     }
 
@@ -166,21 +169,21 @@ body {
         transition: margin-left 0.3s ease;
     }
 
-    /* Aplicar margen dinámico solo en orientación vertical */
     .side-menu.show + .main-content {
         margin-left: 60px; /* Margen para evitar superposición */
     }
+}
 
-    /* Ajustar el margen dinámico en orientación horizontal */
-    @media (orientation: landscape) {
-        .side-menu.show + .main-content {
-            margin-left: 0; /* No aplicar margen en orientación horizontal */
-        }
+/* Estilos para orientación horizontal en dispositivos móviles */
+@media (max-width: 768px) and (orientation: landscape) {
+    .side-menu {
+        top: 10px; /* Ajusta la posición superior */
+        left: 10px;
+        max-height: 80vh; /* Limita la altura del menú */
+    }
 
-        .side-menu {
-            top: 10px; /* Ajustar posición en orientación horizontal */
-            left: 10px;
-        }
+    .side-menu.show + .main-content {
+        margin-left: 60px; /* Margen para evitar superposición */
     }
 }
 
