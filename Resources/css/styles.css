@@ -145,7 +145,7 @@ body {
 }
 
 /* Estilos para el menú lateral en móvil */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .side-menu {
         top: 20px; /* Posición más alta */
         left: 10px; /* Posición más cercana al borde */
@@ -201,11 +201,13 @@ body {
     margin-bottom: 15px;
     border-bottom: 2px solid #fff;
     padding-bottom: 10px;
+    margin-left: 30px;
 }
 
 .section_data {
     font-size: 1rem;
     line-height: 1.6;
+    margin-left: 30px;
 }
 
 .cosmic-background {
@@ -509,7 +511,7 @@ body {
 
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .navbar ul {
         flex-direction: column;
     }

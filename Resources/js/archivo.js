@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
         "perfil": "Datos Personales",
         "perfil_texto": "Actualmente curso el 11vo cuatrimestre de la carrera de Ingeniería en Sistemas Computacionales en la (UBAM), con un promedio de 9.5, tengo conocimientos técnicos de programación y estoy familiarizado con temas como sistemas computacionales. Mi aspiración profesional es desarrollarme en una empresa en áreas como desarrollador de software. Me considero una persona con disposición para aprender e intentar nuevas técnicas y tecnologías.",
         "trasfondo": "Trasfondo Académico",
-        "trasfondo_texto": "+ UNIVERSIDAD BANCARIA DE MÉXICO - Ingeniería en Sistemas Computacionales | En curso (11vo. Cuatrimestre).<br>+ UNIVERSIDAD BANCARIA DE MÉXICO - Técnico en Programación",
+        "trasfondo_texto": "<li>UNIVERSIDAD BANCARIA DE MÉXICO - Ingeniería en Sistemas Computacionales | En curso (11vo. Cuatrimestre).</li><li>UNIVERSIDAD BANCARIA DE MÉXICO - Técnico en Programación</li>",
         "conocimientos": "Conocimientos Técnicos",
         "conocimientos_lista": [
             "Conocimientos de programación: Java, JavaScript, HTML, PHP, Python.",
@@ -48,7 +48,12 @@ document.addEventListener('DOMContentLoaded', function () {
             "Escucha activa"
         ],
         "experiencia": "Experiencia Profesional",
-        "experiencia_texto": "Soporte de sistemas en Grupo Val - Ro<br>+ Mantenimiento de equipos de cómputo.<br>+ Control de inventarios.<br>+ Atención al usuario.<br><br>Soporte de sistemas en Parque de las Américas<br>+ Gestión de redes y dominios."
+        "experiencia_texto": "<li>Soporte de sistemas en Grupo Val - Ro</li>"+
+        "<ol>Mantenimiento de equipos de cómputo.</ol>"+
+        "<ol>Control de inventarios.</ol>"+
+        "<ol>Atención al usuario.</ol>"+
+        "<li>Soporte de sistemas en Parque de las Américas</li>"+
+        "<ol>Gestión de redes y dominios.</ol>"
     },
     "en": {
         "titulo": "Computer Systems Engineer",
@@ -66,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
         "perfil": "Personal Data",
         "perfil_texto": "I am currently in the 11th semester of the Computer Systems Engineering degree at (UBAM), with a GPA of 9.5. I have technical programming knowledge and am familiar with topics such as computer systems. My professional aspiration is to develop in a company in areas such as software developer. I consider myself a person with a willingness to learn and try new techniques and technologies.",
         "trasfondo": "Academic Background",
-        "trasfondo_texto": "+ UNIVERSIDAD BANCARIA DE MÉXICO - Computer Systems Engineering | In progress (11th Semester).<br>+ UNIVERSIDAD BANCARIA DE MÉXICO - Programming Technician",
+        "trasfondo_texto": "<li>UNIVERSIDAD BANCARIA DE MÉXICO - Computer Systems Engineering | In progress (11th Semester).</li><li>UNIVERSIDAD BANCARIA DE MÉXICO - Programming Technician</li>",
         "conocimientos": "Technical Skills",
         "conocimientos_lista": [
             "Programming knowledge: Java, JavaScript, HTML, PHP, Python.",
@@ -98,7 +103,12 @@ document.addEventListener('DOMContentLoaded', function () {
             "Active listening"
         ],
         "experiencia": "Professional Experience",
-        "experiencia_texto": "Systems support at Grupo Val - Ro<br>+ Computer equipment maintenance.<br>+ Inventory control.<br>+ User support.<br><br>Systems support at Parque de las Américas<br>+ Network and domain management."
+        "experiencia_texto": "<li>Systems support at Grupo Val - Ro</li>"+
+        "<ol>Computer equipment maintenance.</ol>"+
+        "<ol>Inventory control.</ol>"+
+        "<ol>User support.</ol>"+
+        "<li>Systems support at Parque de las Américas</li>"+
+        "<ol>Network and domain management.</ol>"
     }
 };
 
@@ -135,10 +145,10 @@ document.addEventListener('DOMContentLoaded', function () {
     
         // Actualizar las secciones
         document.querySelector('#perfil h3').textContent = traducciones[idiomaActual].perfil;
-        document.querySelector('#perfil p').textContent = traducciones[idiomaActual].perfil_texto;
+        document.querySelector('#perfil ul').textContent = traducciones[idiomaActual].perfil_texto;
     
         document.querySelector('#trasfondo h3').textContent = traducciones[idiomaActual].trasfondo;
-        document.querySelector('#trasfondo p').innerHTML = traducciones[idiomaActual].trasfondo_texto;
+        document.querySelector('#trasfondo ul').innerHTML = traducciones[idiomaActual].trasfondo_texto;
     
         document.querySelector('#conocimientos h3').textContent = traducciones[idiomaActual].conocimientos;
         const conocimientosLista = document.querySelector('#conocimientos ul');
@@ -229,7 +239,7 @@ document.addEventListener('DOMContentLoaded', function () {
         aptitudesLista.innerHTML = traducciones[idiomaActual].aptitudes_lista.map(item => `<li>${item}</li>`).join('');
     
         document.querySelector('#experiencia h3').textContent = traducciones[idiomaActual].experiencia;
-        document.querySelector('#experiencia p').innerHTML = traducciones[idiomaActual].experiencia_texto;
+        document.querySelector('#experiencia ul').innerHTML = traducciones[idiomaActual].experiencia_texto;
     }
 
     // Función para desplazarse al inicio de la página
