@@ -419,15 +419,6 @@ document.addEventListener("DOMContentLoaded", function () {
     animate();
 });
 
-
-function showContact() {
-    document.getElementById('contactDiv').classList.add('show');
-}
-
-function hideContact() {
-    document.getElementById('contactDiv').classList.remove('show');
-}
-
 function copiarTexto(idBoton) {
     const botonToTexto = {
         'btn_eml': 'eder_isc_mg101203@outlook.com',
@@ -450,3 +441,38 @@ function copiarTexto(idBoton) {
             console.error('Error al copiar el dato: ', err);
         });
 }
+
+// Variable para rastrear si la sección de contacto está visible
+let isContactVisible = false;
+
+// Función para mostrar la sección de contacto
+function showContact() {
+    const contactDiv = document.getElementById('contactDiv');
+    contactDiv.classList.add('show');
+    isContactVisible = true; // Actualiza el estado
+}
+
+// Función para ocultar la sección de contacto
+function hideContact() {
+    const contactDiv = document.getElementById('contactDiv');
+    contactDiv.classList.remove('show');
+    isContactVisible = false; // Actualiza el estado
+}
+
+// Manejar el redimensionamiento de la ventana
+window.addEventListener('resize', function () {
+    const contactDiv = document.getElementById('contactDiv');
+    if (isContactVisible) {
+        // Si la sección de contacto estaba visible, asegúrate de que siga visible
+        contactDiv.classList.add('show');
+    } else {
+        // Si la sección de contacto estaba oculta, asegúrate de que siga oculta
+        contactDiv.classList.remove('show');
+    }
+});
+
+// Inicialización de la sección de contacto
+document.addEventListener('DOMContentLoaded', function () {
+    // Asegúrate de que la sección de contacto esté oculta al cargar la página
+    hideContact();
+});
