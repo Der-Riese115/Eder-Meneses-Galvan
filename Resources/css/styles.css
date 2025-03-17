@@ -157,8 +157,8 @@ body {
     }
 
     .side-menu a {
-        padding: 10px;
-        font-size: 0.5rem;
+        padding: 5px;
+        font-size: 1rem;
     }
 
     /* Margen dinámico para el contenido principal */
