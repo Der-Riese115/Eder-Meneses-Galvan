@@ -476,3 +476,49 @@ document.addEventListener('DOMContentLoaded', function () {
     // Asegúrate de que la sección de contacto esté oculta al cargar la página
     hideContact();
 });
+
+// Función para ajustar el margen dinámico según la orientación
+function adjustMarginForOrientation() {
+    const sideMenu = document.getElementById('sideMenu');
+    const mainContent = document.querySelector('.main-content');
+
+    if (window.innerWidth <= 768) {
+        if (window.innerHeight > window.innerWidth) {
+            // Orientación vertical
+            if (sideMenu.classList.contains('show')) {
+                mainContent.classList.add('menu-visible'); // Aplicar margen dinámico
+            } else {
+                mainContent.classList.remove('menu-visible'); // Quitar margen dinámico
+            }
+        } else {
+            // Orientación horizontal
+            mainContent.classList.remove('menu-visible'); // No aplicar margen dinámico
+        }
+    } else {
+        // Pantallas más grandes (escritorio)
+        mainContent.classList.remove('menu-visible'); // No aplicar margen dinámico
+    }
+}
+
+// Ejecutar la función al cargar la página y al redimensionar la ventana
+document.addEventListener('DOMContentLoaded', function () {
+    adjustMarginForOrientation();
+});
+
+window.addEventListener('resize', function () {
+    adjustMarginForOrientation();
+});
+
+// Función para mostrar/ocultar el menú lateral
+document.addEventListener('scroll', function () {
+    const sideMenu = document.getElementById('sideMenu');
+    const header = document.querySelector('.header');
+
+    if (window.scrollY > header.clientHeight) {
+        sideMenu.classList.add('show');
+        adjustMarginForOrientation(); // Ajustar el margen dinámico
+    } else {
+        sideMenu.classList.remove('show');
+        adjustMarginForOrientation(); // Ajustar el margen dinámico
+    }
+});

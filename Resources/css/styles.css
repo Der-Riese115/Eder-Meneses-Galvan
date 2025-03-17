@@ -145,7 +145,7 @@ body {
 }
 
 /* Estilos para el menú lateral en móvil */
-@media (max-width: 768px),(max-height: 768px) {
+@media (max-width: 768px) {
     .side-menu {
         top: 20px; /* Posición más alta */
         left: 10px; /* Posición más cercana al borde */
@@ -158,7 +158,7 @@ body {
 
     .side-menu a {
         padding: 5px;
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     /* Margen dinámico para el contenido principal */
@@ -166,12 +166,21 @@ body {
         transition: margin-left 0.3s ease;
     }
 
+    /* Aplicar margen dinámico solo en orientación vertical */
     .side-menu.show + .main-content {
         margin-left: 60px; /* Margen para evitar superposición */
     }
 
-    .main-content.menu-visible {
-        margin-left: 60px; /* Margen para evitar superposición */
+    /* Ajustar el margen dinámico en orientación horizontal */
+    @media (orientation: landscape) {
+        .side-menu.show + .main-content {
+            margin-left: 0; /* No aplicar margen en orientación horizontal */
+        }
+
+        .side-menu {
+            top: 10px; /* Ajustar posición en orientación horizontal */
+            left: 10px;
+        }
     }
 }
 
@@ -512,7 +521,7 @@ body {
 
 
 /* Responsive Design */
-@media (max-width: 768px),(max-height: 768px) {
+@media (max-width: 768px) {
     .navbar ul {
         flex-direction: column;
     }
