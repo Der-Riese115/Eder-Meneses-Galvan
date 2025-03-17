@@ -145,7 +145,7 @@ body {
 }
 
 /* Estilos para el menú lateral en móvil */
-@media (max-width: 1000px) {
+@media (max-width: 1080px) {
     .side-menu {
         top: 20px; /* Posición más alta */
         left: 10px; /* Posición más cercana al borde */
