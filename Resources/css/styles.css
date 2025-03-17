@@ -145,7 +145,7 @@ body {
 }
 
 /* Estilos para el menú lateral en móvil */
-@media (max-width: 768px) {
+@media (max-width: 768px),(max-height: 768px) {
     .side-menu {
         top: 20px; /* Posición más alta */
         left: 10px; /* Posición más cercana al borde */
@@ -512,7 +512,7 @@ body {
 
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 768px),(max-height: 768px) {
     .navbar ul {
         flex-direction: column;
     }
